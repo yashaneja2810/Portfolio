@@ -1,47 +1,59 @@
-import { GraduationCap, MapPin, Brain, Layers } from 'lucide-react';
+import { GraduationCap, MapPin, Brain, Code2 } from 'lucide-react';
 
 const stats = [
-  { value: '150+', label: 'LeetCode Problems Solved' },
-  { value: '3+', label: 'Production Systems Built' },
-  { value: '30%', label: 'Search Accuracy Boost' },
-  { value: '90%', label: 'Task Automation' },
+  { value: '150+', label: 'LeetCode Problems', icon: '⚡' },
+  { value: '5+', label: 'Production Projects', icon: '🚀' },
+  { value: '15+', label: 'Screens Per Project', icon: '🎨' },
+  { value: '3+', label: 'Design Systems Built', icon: '✨' },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-gray-950">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="about" className="relative py-28 overflow-hidden">
+      {/* Background decorations */}
+      <div className="orb orb-indigo w-[400px] h-[400px] -top-[100px] -right-[100px] opacity-30" />
+      <div className="orb orb-purple w-[300px] h-[300px] bottom-0 -left-[100px] opacity-20" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="mb-16">
-          <p className="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-3">About</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Who I Am</h2>
+          <p className="section-label">
+            <Code2 size={14} />
+            About
+          </p>
+          <h2 className="section-title">Who I Am</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              I'm a Computer Science student at <span className="text-white font-medium">Vellore Institute of Technology, Chennai</span>, with expertise spanning Software Development, AI/ML Engineering, and Full-Stack Development. I build scalable, production-grade systems that solve complex real-world problems.
+            <p className="text-slate-500 text-lg leading-relaxed mb-6">
+              I'm a <span className="text-[#1a1a2e] font-semibold">Frontend Software Engineer</span> with hands-on experience
+              delivering pixel-perfect, responsive web interfaces using TypeScript, React, CSS3, and TailwindCSS.
             </p>
-            <p className="text-gray-400 leading-relaxed mb-8">
-              My technical foundation is rooted in strong problem-solving skills with <span className="text-white font-medium">150+ LeetCode problems solved</span> in Data Structures & Algorithms. I excel across multiple domains — from building intelligent AI systems with RAG and LLMs to architecting full-stack applications and scalable backend infrastructures. Whether it's SDE, AI/ML, or Full-Stack, I deliver robust, production-ready solutions.
+            <p className="text-slate-500 leading-relaxed mb-6">
+              Proficient in translating detailed design references and component style guides into precise,
+              production-ready UI implementations. Strong background in building and maintaining{' '}
+              <span className="text-[#1a1a2e] font-semibold">design systems</span>,{' '}
+              <span className="text-[#1a1a2e] font-semibold">accessible UI components</span>, and{' '}
+              <span className="text-[#1a1a2e] font-semibold">performance-optimized interfaces</span>.
+            </p>
+            <p className="text-slate-500 leading-relaxed mb-8">
+              Self-motivated and experienced in async, remote-first collaboration with clear documentation practices.
+              Currently pursuing B.Tech in Computer Science at VIT Chennai (Expected 2027).
             </p>
 
             <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3 text-gray-400">
-                <GraduationCap size={18} className="text-cyan-400 shrink-0" />
-                <span>B.Tech Computer Science – VIT Chennai</span>
-              </div>
-              <div className="flex items-center gap-3 text-gray-400">
-                <MapPin size={18} className="text-cyan-400 shrink-0" />
-                <span>Chennai, India</span>
-              </div>
-              <div className="flex items-center gap-3 text-gray-400">
-                <Brain size={18} className="text-cyan-400 shrink-0" />
-                <span>Expertise: SDE • AI/ML • Full-Stack Development</span>
-              </div>
-              <div className="flex items-center gap-3 text-gray-400">
-                <Layers size={18} className="text-cyan-400 shrink-0" />
-                <span>Strong DSA Foundation: 150+ LeetCode Problems</span>
-              </div>
+              {[
+                { icon: GraduationCap, text: 'B.Tech Computer Science – VIT Chennai (2027)' },
+                { icon: MapPin, text: 'Chennai, India' },
+                { icon: Brain, text: 'Frontend · Design Systems · Full-Stack · AI/ML' },
+              ].map(({ icon: Icon, text }) => (
+                <div key={text} className="flex items-center gap-3 text-slate-500">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0">
+                    <Icon size={15} className="text-indigo-500" />
+                  </div>
+                  <span className="text-sm">{text}</span>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -49,10 +61,13 @@ export default function About() {
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="bg-white/[0.03] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 hover:bg-cyan-500/5 transition-all duration-300"
+                className="glass-card rounded-2xl p-6 text-center group cursor-default"
               >
-                <div className="text-3xl font-bold text-cyan-400 mb-1">{s.value}</div>
-                <div className="text-sm text-gray-500 leading-tight">{s.label}</div>
+                <span className="text-2xl mb-3 block">{s.icon}</span>
+                <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 mb-1">
+                  {s.value}
+                </div>
+                <div className="text-sm text-slate-400 leading-tight font-medium">{s.label}</div>
               </div>
             ))}
           </div>

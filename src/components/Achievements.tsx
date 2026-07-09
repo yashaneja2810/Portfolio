@@ -1,32 +1,32 @@
-import { Trophy, Award, BadgeCheck } from 'lucide-react';
+import { Trophy, Award, BadgeCheck, Star } from 'lucide-react';
 
 const achievements = [
   {
     icon: Trophy,
     title: 'Ecocity Innovate Hackathon Winner',
     description:
-      'Won the hackathon by developing an AI-driven smart city solution focused on carbon reduction, energy optimization, and sustainable urban planning — leveraging data-driven insights and AI models for real-world feasibility.',
-    color: 'text-yellow-400',
-    bg: 'bg-yellow-500/10',
-    border: 'border-yellow-500/20',
+      'Built and presented a full-stack AI solution selected over 200+ competing teams. Handled end-to-end frontend implementation under time pressure.',
+    color: 'text-amber-500',
+    bg: 'bg-amber-50',
+    border: 'border-amber-100',
+  },
+  {
+    icon: Star,
+    title: 'Pixel-Accurate UIs Across 3+ Production Apps',
+    description:
+      'Delivered pixel-accurate, responsive UIs across 3 production-deployed applications — 15+ screens per project, custom design systems, and reusable component libraries built independently.',
+    color: 'text-indigo-500',
+    bg: 'bg-indigo-50',
+    border: 'border-indigo-100',
   },
   {
     icon: BadgeCheck,
     title: '150+ LeetCode Problems Solved',
     description:
-      'Demonstrated strong problem-solving skills and mastery of Data Structures & Algorithms through consistent practice on LeetCode, covering arrays, trees, graphs, dynamic programming, and advanced algorithmic techniques.',
-    color: 'text-purple-400',
-    bg: 'bg-purple-500/10',
-    border: 'border-purple-500/20',
-  },
-  {
-    icon: BadgeCheck,
-    title: '3+ Production-Grade Systems Deployed',
-    description:
-      'Built and deployed multiple production-grade systems across SDE, AI/ML, and Full-Stack domains — integrating LLMs, vector databases, scalable backend architectures, and modern frontend frameworks with measurable real-world impact.',
-    color: 'text-cyan-400',
-    bg: 'bg-cyan-500/10',
-    border: 'border-cyan-500/20',
+      'Strong CS fundamentals demonstrated through consistent problem-solving practice covering arrays, trees, graphs, dynamic programming, and advanced algorithmic techniques.',
+    color: 'text-purple-500',
+    bg: 'bg-purple-50',
+    border: 'border-purple-100',
   },
 ];
 
@@ -50,17 +50,27 @@ const certifications = [
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-24 bg-gray-950">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="achievements" className="relative py-28 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-50/50 to-transparent" />
+      <div className="orb orb-purple w-[400px] h-[400px] top-[10%] -left-[150px] opacity-20" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="mb-16">
-          <p className="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-3">Recognition</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Achievements & Certifications</h2>
+          <p className="section-label">
+            <Trophy size={14} />
+            Recognition
+          </p>
+          <h2 className="section-title">Achievements & Certifications</h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
+          {/* Achievements */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-              <Trophy size={18} className="text-yellow-400" />
+            <h3 className="text-lg font-bold text-[#1a1a2e] mb-6 flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center">
+                <Trophy size={16} className="text-amber-500" />
+              </div>
               Achievements
             </h3>
             <div className="space-y-4">
@@ -69,14 +79,14 @@ export default function Achievements() {
                 return (
                   <div
                     key={a.title}
-                    className={`flex items-start gap-4 p-5 rounded-xl border ${a.border} ${a.bg} bg-opacity-10`}
+                    className={`glass-card rounded-xl p-5 flex items-start gap-4`}
                   >
-                    <div className={`shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${a.bg}`}>
+                    <div className={`shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${a.bg}`}>
                       <Icon size={18} className={a.color} />
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold text-sm mb-1">{a.title}</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed">{a.description}</p>
+                      <h4 className="text-[#1a1a2e] font-bold text-sm mb-1">{a.title}</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">{a.description}</p>
                     </div>
                   </div>
                 );
@@ -84,9 +94,12 @@ export default function Achievements() {
             </div>
           </div>
 
+          {/* Certifications */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-              <Award size={18} className="text-cyan-400" />
+            <h3 className="text-lg font-bold text-[#1a1a2e] mb-6 flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center">
+                <Award size={16} className="text-indigo-500" />
+              </div>
               Certifications
             </h3>
             <div className="space-y-3">
@@ -95,14 +108,14 @@ export default function Achievements() {
                 return (
                   <div
                     key={cert.title}
-                    className="flex items-center gap-4 p-4 rounded-xl border border-white/10 bg-white/[0.03] hover:border-white/20 transition-colors"
+                    className="glass-card rounded-xl p-4 flex items-center gap-4"
                   >
-                    <div className="shrink-0 w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
-                      <Icon size={16} className="text-cyan-400" />
+                    <div className="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center">
+                      <Icon size={16} className="text-indigo-500" />
                     </div>
                     <div>
-                      <h4 className="text-white text-sm font-medium">{cert.title}</h4>
-                      <p className="text-gray-500 text-xs mt-0.5">{cert.issuer}</p>
+                      <h4 className="text-[#1a1a2e] text-sm font-semibold">{cert.title}</h4>
+                      <p className="text-slate-400 text-xs mt-0.5">{cert.issuer}</p>
                     </div>
                   </div>
                 );

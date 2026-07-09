@@ -2,65 +2,52 @@ import { Code2, Mail, Phone, Github, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-950 border-t border-white/10 py-12">
-      <div className="max-w-6xl mx-auto px-6">
+    <footer className="relative border-t border-slate-100 py-12 overflow-hidden">
+      {/* Subtle background */}
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-50/80 to-transparent" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-cyan-500 flex items-center justify-center">
-                <Code2 size={14} className="text-gray-950" />
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                <Code2 size={14} className="text-white" />
               </div>
-              <span className="text-white font-bold text-lg">Yash Aneja</span>
+              <span className="text-[#1a1a2e] font-bold text-lg">Yash Aneja</span>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Software Engineer specializing in Full-Stack Development, AI/ML Systems, and Backend Engineering.
+            <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
+              Frontend Software Engineer specializing in TypeScript, React, CSS3, and TailwindCSS. Building pixel-perfect, responsive web interfaces and design systems.
             </p>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4 text-sm">Contact Information</h3>
-            <div className="space-y-3">
-              <a
-                href="mailto:yashaneja28@gmail.com"
-                className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors text-sm group"
-              >
-                <Mail size={16} className="shrink-0" />
-                <span>yashaneja28@gmail.com</span>
-              </a>
-              <a
-                href="tel:+919587800439"
-                className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors text-sm group"
-              >
-                <Phone size={16} className="shrink-0" />
-                <span>+91 9587800439</span>
-              </a>
-              <a
-                href="https://github.com/yashaneja2810"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors text-sm group"
-              >
-                <Github size={16} className="shrink-0" />
-                <span>github.com/yashaneja2810</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/yash-aneja-85b19128b"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors text-sm group"
-              >
-                <Linkedin size={16} className="shrink-0" />
-                <span>linkedin.com/in/yash-aneja-85b19128b</span>
-              </a>
+            <h3 className="text-[#1a1a2e] font-bold mb-4 text-sm">Connect</h3>
+            <div className="space-y-2.5">
+              {[
+                { icon: Mail, text: 'yashaneja28@gmail.com', href: 'mailto:yashaneja28@gmail.com' },
+                { icon: Phone, text: '+91 9587800439', href: 'tel:+919587800439' },
+                { icon: Github, text: 'github.com/yashaneja2810', href: 'https://github.com/yashaneja2810' },
+                { icon: Linkedin, text: 'LinkedIn', href: 'https://www.linkedin.com/in/yash-aneja-85b19128b' },
+              ].map(({ icon: Icon, text, href }) => (
+                <a
+                  key={text}
+                  href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="flex items-center gap-3 text-slate-400 hover:text-indigo-500 transition-colors text-sm group"
+                >
+                  <Icon size={15} className="shrink-0" />
+                  <span>{text}</span>
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-600 text-sm">
-            Built with React & TailwindCSS
-          </p>
-          <p className="text-gray-600 text-xs">
+        <div className="section-divider mb-6" />
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <p className="text-slate-300 text-xs">
             &copy; {new Date().getFullYear()} Yash Aneja. All rights reserved.
           </p>
         </div>

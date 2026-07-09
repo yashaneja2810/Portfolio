@@ -1,86 +1,101 @@
+import { Wrench } from 'lucide-react';
+
 const skillGroups = [
   {
-    category: 'Languages',
-    icon: '{ }',
-    skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C/C++', 'SQL'],
-    color: 'text-cyan-400',
-    bg: 'bg-cyan-500/10',
+    category: 'Frontend (Primary)',
+    icon: '◈',
+    skills: ['TypeScript', 'React 18', 'CSS3', 'TailwindCSS', 'Responsive Web Design', 'Vanilla JavaScript', 'Framer Motion', 'React Router v6', 'Zustand'],
+    color: 'text-indigo-600',
+    bg: 'bg-indigo-50',
+    border: 'border-indigo-100',
   },
   {
-    category: 'DSA & Problem Solving',
+    category: 'UI & Design Systems',
+    icon: '🎨',
+    skills: ['Component Style Guides', 'Design Tokens', 'Glassmorphism', 'Dark/Light Theming', 'Pixel-Perfect Implementation', 'Accessibility (a11y)', 'Cross-Browser Compatibility'],
+    color: 'text-purple-600',
+    bg: 'bg-purple-50',
+    border: 'border-purple-100',
+  },
+  {
+    category: 'Real-Time UI',
     icon: '⚡',
-    skills: ['Data Structures', 'Algorithms', 'LeetCode (150+)', 'Competitive Programming', 'System Design'],
-    color: 'text-purple-400',
-    bg: 'bg-purple-500/10',
+    skills: ['WebRTC (simple-peer)', 'Socket.IO Client', 'Live Caption Overlays', 'Dynamic Video Grids', 'Optimistic UI Updates'],
+    color: 'text-amber-600',
+    bg: 'bg-amber-50',
+    border: 'border-amber-100',
+  },
+  {
+    category: 'Build Tools',
+    icon: '⚙',
+    skills: ['Vite', 'ESLint', 'PostCSS', 'Autoprefixer', 'npm', 'Git', 'CI/CD'],
+    color: 'text-emerald-600',
+    bg: 'bg-emerald-50',
+    border: 'border-emerald-100',
+  },
+  {
+    category: 'Backend (Supporting)',
+    icon: '⬡',
+    skills: ['FastAPI', 'Node.js', 'Express.js', 'REST APIs', 'JWT Auth', 'PostgreSQL', 'Supabase'],
+    color: 'text-blue-600',
+    bg: 'bg-blue-50',
+    border: 'border-blue-100',
   },
   {
     category: 'AI / ML',
     icon: '🤖',
-    skills: ['LLMs', 'RAG', 'LangChain', 'Embeddings', 'Sentence Transformers', 'BERT', 'GPT', 'XGBoost', 'TensorFlow'],
-    color: 'text-blue-400',
-    bg: 'bg-blue-500/10',
+    skills: ['LLMs', 'RAG Pipelines', 'Gemini API', 'Groq API', 'HuggingFace', 'TensorFlow'],
+    color: 'text-rose-600',
+    bg: 'bg-rose-50',
+    border: 'border-rose-100',
   },
   {
-    category: 'Backend',
-    icon: '⬡',
-    skills: ['FastAPI', 'Node.js', 'REST APIs', 'JWT Authentication', 'Socket.IO', 'Microservices'],
-    color: 'text-emerald-400',
-    bg: 'bg-emerald-500/10',
-  },
-  {
-    category: 'Frontend',
-    icon: '◈',
-    skills: ['React.js', 'Next.js', 'TailwindCSS', 'Responsive Design'],
-    color: 'text-orange-400',
-    bg: 'bg-orange-500/10',
-  },
-  {
-    category: 'Databases',
-    icon: '◎',
-    skills: ['PostgreSQL', 'MongoDB', 'Supabase', 'Qdrant (Vector DB)', 'Redis'],
-    color: 'text-rose-400',
-    bg: 'bg-rose-500/10',
-  },
-  {
-    category: 'Tools & Cloud',
-    icon: '⚙',
-    skills: ['AWS', 'Git', 'Docker', 'Hugging Face', 'CI/CD Pipelines', 'Vercel', 'Render'],
-    color: 'text-yellow-400',
-    bg: 'bg-yellow-500/10',
-  },
-  {
-    category: 'Core CS Fundamentals',
-    icon: '◻',
-    skills: ['Computer Networks', 'Operating Systems', 'Computer Architecture', 'DBMS', 'OOP'],
-    color: 'text-gray-300',
-    bg: 'bg-white/5',
+    category: 'Languages',
+    icon: '{ }',
+    skills: ['TypeScript', 'JavaScript', 'Python', 'Java', 'C/C++', 'SQL'],
+    color: 'text-cyan-600',
+    bg: 'bg-cyan-50',
+    border: 'border-cyan-100',
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 bg-gray-900">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="skills" className="relative py-28 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-50/60 to-transparent" />
+      <div className="orb orb-blue w-[350px] h-[350px] top-[20%] -right-[100px] opacity-20" />
+      <div className="orb orb-pink w-[300px] h-[300px] bottom-[10%] -left-[100px] opacity-15" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="mb-16">
-          <p className="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-3">Skills</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Technical Expertise</h2>
+          <p className="section-label">
+            <Wrench size={14} />
+            Skills
+          </p>
+          <h2 className="section-title">Technical Expertise</h2>
+          <p className="text-slate-500 mt-4 text-lg max-w-2xl">
+            Specialized in frontend development with deep expertise in design systems, responsive UI, and real-time web applications.
+          </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {skillGroups.map((group) => (
             <div
               key={group.category}
-              className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors duration-300"
+              className="glass-card rounded-2xl p-6 group"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <span className={`text-lg font-mono ${group.color}`}>{group.icon}</span>
-                <h3 className="text-white font-semibold">{group.category}</h3>
+              <div className="flex items-center gap-3 mb-5">
+                <span className={`text-lg w-9 h-9 rounded-xl ${group.bg} flex items-center justify-center font-mono`}>
+                  {group.icon}
+                </span>
+                <h3 className="text-[#1a1a2e] font-bold text-sm">{group.category}</h3>
               </div>
               <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className={`text-xs px-2.5 py-1 rounded-md font-medium ${group.bg} ${group.color}`}
+                    className={`text-xs px-3 py-1.5 rounded-full font-medium border ${group.bg} ${group.color} ${group.border} transition-all duration-200 hover:shadow-sm`}
                   >
                     {skill}
                   </span>

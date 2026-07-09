@@ -1,125 +1,205 @@
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Layers, ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
-    title: 'AI-Powered Meeting Task Management System',
+    title: 'AutoExec AI',
+    subtitle: 'Full-Stack SaaS Platform UI',
     description:
-      'Full-stack multi-agent AI system that automatically extracts, assigns, and tracks action items from meeting transcripts, reducing manual task delegation by 90%.',
-    stack: ['React', 'Node.js', 'FastAPI', 'Supabase', 'Google Gemini', 'Groq'],
+      'Designed and implemented a full design system from scratch — custom dark-theme glassmorphism UI with consistent spacing, typography scale, color tokens, and reusable component library applied across 15+ application screens.',
+    stack: ['TypeScript', 'React 18', 'TailwindCSS', 'Framer Motion', 'Zustand', 'CSS3'],
     bullets: [
-      'Engineered multi-agent orchestration with 4 specialized agents: Meeting Analyzer, Task Extractor, Assignment Agent, Audit Agent.',
-      'Implemented task completion approval workflow with email notifications and real-time status tracking.',
-      'Built scalable microservices with automated keep-alive mechanisms and retry logic, deployed on Vercel & Render with 99% uptime.',
-      'Designed glassmorphism UI with black & white theme and mobile-responsive email templates.',
+      'Delivered pixel-accurate, responsive layouts across all viewport sizes — mobile-first breakpoints, fluid grids, and adaptive sidebar panels.',
+      'Built real-time live meeting room UI: dynamic video grid (WebRTC), floating control bar, collapsible panels, live caption overlay with Framer Motion transitions.',
+      'Implemented complex interactive patterns: multi-step onboarding wizard, advanced task filter/sort, real-time status updates, modal systems with focus trapping.',
+      'Managed global UI state using Zustand with persistent auth session hydration and optimistic UI updates across views.',
     ],
-    highlight: '90% reduction in manual task delegation',
-    color: 'cyan',
+    highlight: '15+ screens with custom design system',
+    color: 'indigo',
     github: 'https://github.com/yashaneja2810/Meeting-Intelligent-System',
+    demo: 'https://meeting-intelligent-system.vercel.app/',
   },
   {
-    title: 'LowCode AI Chatbot Builder Platform (PrayogAI)',
+    title: 'PrayogAI',
+    subtitle: 'SaaS Platform UI & Embeddable Chat Widget',
     description:
-      'Full-stack GenAI platform enabling users to create custom chatbots using document ingestion and large-scale data extraction with sub-2s query latency.',
-    stack: ['FastAPI', 'Qdrant', 'Gemini 2.5', 'Sentence Transformers', 'aiohttp', 'Selenium'],
+      'Built a self-contained embeddable chat widget in pure Vanilla JavaScript (IIFE, zero dependencies) with custom CSS3 theming, light/dark mode toggle, draggable/resizable window, Markdown rendering, and full XSS protection.',
+    stack: ['TypeScript', 'React 18', 'TailwindCSS', 'Vanilla JS', 'CSS3', 'Framer Motion'],
     bullets: [
-      'Designed end-to-end data pipeline: chunking, embedding, indexing, retrieval, and generation.',
-      'Built multi-tenant architecture with isolated vector collections per bot for secure, scalable data handling.',
-      'Implemented async web scraping with aiohttp + Selenium for structured/unstructured data from dynamic websites.',
-      'Developed embeddable chatbot widget and REST API supporting real-time queries with sub-2s latency.',
+      'Implemented custom CSS3 component styling with configurable brand color injection via data attributes — any website can embed the widget and match their brand.',
+      'Designed React + TypeScript platform UI: drag-and-drop file upload, bot management dashboard with search/filter, integrated live chat testing interface.',
+      'Applied responsive web design principles: fluid layouts, TailwindCSS responsive prefixes, accessible form controls, and keyboard navigation support.',
+      'Cross-browser compatible across Chrome, Firefox, and Safari with zero external stylesheet dependencies.',
     ],
-    highlight: 'Sub-2s query latency at scale',
-    color: 'blue',
+    highlight: 'Zero-dependency embeddable widget',
+    color: 'purple',
     github: 'https://github.com/yashaneja2810/PrayogAI',
+    demo: null,
   },
   {
-    title: 'Chest Disease Predictor',
+    title: 'Star Wars Jedi Academy',
+    subtitle: 'Award-Winning Interactive Website',
     description:
-      'Deep learning model using ResNet50 to classify chest X-rays into 6 disease categories with ~87% accuracy, trained on 18,000+ medical images.',
-    stack: ['ResNet50', 'TensorFlow', 'Flask', 'Python', 'Deep Learning'],
+      'A premium, cinematic Star Wars experience featuring Jedi training, Force-powered animations, playable video galleries, and GSAP-driven scroll-triggered effects. Built with award-winning design patterns.',
+    stack: ['React 18', 'TypeScript', 'Tailwind CSS', 'GSAP', 'Vite', 'Lucide React'],
     bullets: [
-      'Achieved ~87% accuracy classifying chest X-rays into 6 disease categories using ResNet50.',
-      'Processed and trained on 18,000+ medical images with data preprocessing and augmentation techniques.',
-      'Built Flask-based inference API for real-time predictions with confidence scoring.',
-      'Designed responsive frontend for data input, visualization, and end-to-end deployment.',
+      'Interactive video cards with custom controls (play/pause, mute, fullscreen), hover effects, and multiple fallback sources.',
+      'Professional GSAP-powered animations: scroll-triggered effects, 3D transforms, parallax scrolling, and animated Force energy particles.',
+      'Jedi-themed glassmorphism design with gradient overlays, glowing lightsaber borders, and Orbitron/Rajdhani typography.',
+      'Mobile-first responsive design with touch-friendly interactions and performance-optimized 60fps animations.',
     ],
-    highlight: '~87% accuracy on 18K+ medical images',
+    highlight: 'Awwwards-quality cinematic experience',
+    color: 'amber',
+    github: 'https://github.com/yashaneja2810/jedi-frontend',
+    demo: 'https://niceui.vercel.app/',
+  },
+  {
+    title: 'Fade',
+    subtitle: 'Frontend Application',
+    description:
+      'A polished, modern frontend application built with cutting-edge web technologies, showcasing clean design patterns and smooth user interactions deployed on Vercel.',
+    stack: ['React', 'TypeScript', 'TailwindCSS', 'Vite'],
+    bullets: [
+      'Built responsive, performant frontend with modern React patterns and TypeScript for type safety.',
+      'Implemented clean, modular component architecture with reusable design system.',
+      'Deployed on Vercel with optimized build pipeline and continuous deployment.',
+    ],
+    highlight: 'Modern frontend architecture',
     color: 'emerald',
-    github: 'https://github.com/yashaneja2810/Chest-Disease-Predictor',
+    github: 'https://github.com/yashaneja2810/Fade-Frontend',
+    demo: 'https://fade-rust.vercel.app/',
+  },
+  {
+    title: 'Lead Intelligence',
+    subtitle: 'Data-Driven Analytics Platform',
+    description:
+      'An intelligent lead analytics and management platform with data-driven insights, built to streamline lead tracking, scoring, and conversion optimization.',
+    stack: ['React', 'TypeScript', 'TailwindCSS', 'Vite'],
+    bullets: [
+      'Designed intuitive dashboard UI for lead management with real-time data visualization.',
+      'Implemented advanced filtering, sorting, and search capabilities across lead datasets.',
+      'Built responsive layouts optimized for both desktop and mobile workflows.',
+    ],
+    highlight: 'Data-driven lead analytics',
+    color: 'blue',
+    github: 'https://github.com/yashaneja2810/Lead-Intelligence',
+    demo: 'https://lead-intelligence-sandy.vercel.app/',
   },
 ];
 
-const colorMap: Record<string, { badge: string; border: string; glow: string; tag: string }> = {
-  cyan: {
-    badge: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
-    border: 'hover:border-cyan-500/30',
-    glow: 'bg-cyan-500/5',
-    tag: 'bg-cyan-500/10 text-cyan-400',
+const colorMap: Record<string, { badge: string; accent: string; tag: string; glow: string }> = {
+  indigo: {
+    badge: 'bg-indigo-50 text-indigo-600 border-indigo-100',
+    accent: 'text-indigo-500',
+    tag: 'bg-indigo-50 text-indigo-600 border-indigo-100',
+    glow: 'group-hover:shadow-indigo-500/8',
   },
-  blue: {
-    badge: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-    border: 'hover:border-blue-500/30',
-    glow: 'bg-blue-500/5',
-    tag: 'bg-blue-500/10 text-blue-400',
+  purple: {
+    badge: 'bg-purple-50 text-purple-600 border-purple-100',
+    accent: 'text-purple-500',
+    tag: 'bg-purple-50 text-purple-600 border-purple-100',
+    glow: 'group-hover:shadow-purple-500/8',
+  },
+  amber: {
+    badge: 'bg-amber-50 text-amber-700 border-amber-100',
+    accent: 'text-amber-500',
+    tag: 'bg-amber-50 text-amber-700 border-amber-100',
+    glow: 'group-hover:shadow-amber-500/8',
   },
   emerald: {
-    badge: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-    border: 'hover:border-emerald-500/30',
-    glow: 'bg-emerald-500/5',
-    tag: 'bg-emerald-500/10 text-emerald-400',
+    badge: 'bg-emerald-50 text-emerald-600 border-emerald-100',
+    accent: 'text-emerald-500',
+    tag: 'bg-emerald-50 text-emerald-600 border-emerald-100',
+    glow: 'group-hover:shadow-emerald-500/8',
+  },
+  blue: {
+    badge: 'bg-blue-50 text-blue-600 border-blue-100',
+    accent: 'text-blue-500',
+    tag: 'bg-blue-50 text-blue-600 border-blue-100',
+    glow: 'group-hover:shadow-blue-500/8',
   },
 };
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-gray-950">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="projects" className="relative py-28 overflow-hidden">
+      {/* Background decorations */}
+      <div className="orb orb-purple w-[500px] h-[500px] top-[10%] -right-[150px] opacity-25" />
+      <div className="orb orb-indigo w-[400px] h-[400px] bottom-[20%] -left-[150px] opacity-20" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="mb-16">
-          <p className="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-3">Projects</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">What I've Built</h2>
+          <p className="section-label">
+            <Layers size={14} />
+            Projects
+          </p>
+          <h2 className="section-title">What I've Built</h2>
+          <p className="text-slate-500 mt-4 text-lg max-w-2xl">
+            Production-deployed applications with custom design systems, reusable component libraries, and pixel-accurate responsive UIs.
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-1 gap-8">
+        <div className="grid gap-8">
           {projects.map((p) => {
             const c = colorMap[p.color];
             return (
               <div
                 key={p.title}
-                className={`group bg-white/[0.03] border border-white/10 rounded-2xl p-8 transition-all duration-300 ${c.border} hover:${c.glow}`}
+                className={`group glass-card rounded-2xl p-8 md:p-10 ${c.glow}`}
               >
-                <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                  <h3 className="text-xl font-bold text-white max-w-xl">{p.title}</h3>
+                {/* Header */}
+                <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#1a1a2e] mb-1">{p.title}</h3>
+                    <p className="text-sm text-slate-400 font-medium">{p.subtitle}</p>
+                  </div>
                   <div className="flex items-center gap-2">
                     <a
                       href={p.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-white transition-colors border border-white/10 hover:border-white/30 px-3 py-1.5 rounded-lg"
+                      className="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-indigo-600 transition-colors glass px-3 py-2 rounded-xl hover:border-indigo-200"
                     >
-                      <Github size={13} />
-                      GitHub
+                      <Github size={14} />
+                      Code
                     </a>
+                    {p.demo && (
+                      <a
+                        href={p.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 text-xs font-semibold text-white bg-gradient-to-r from-indigo-500 to-purple-500 px-4 py-2 rounded-xl hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300"
+                      >
+                        <ExternalLink size={13} />
+                        Live Demo
+                        <ArrowUpRight size={12} />
+                      </a>
+                    )}
                   </div>
                 </div>
 
-                <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-medium mb-4 ${c.badge}`}>
-                  <ExternalLink size={11} />
+                {/* Highlight badge */}
+                <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-semibold mb-5 ${c.badge}`}>
+                  <span className={`w-1.5 h-1.5 rounded-full bg-current`} />
                   {p.highlight}
                 </div>
 
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">{p.description}</p>
+                {/* Description */}
+                <p className="text-slate-500 text-sm leading-relaxed mb-6">{p.description}</p>
 
-                <ul className="space-y-2 mb-6">
+                {/* Bullet points */}
+                <ul className="space-y-2.5 mb-6">
                   {p.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2.5 text-gray-500 text-sm">
-                      <span className="mt-2 w-1 h-1 rounded-full bg-gray-500 shrink-0" />
+                    <li key={b} className="flex items-start gap-2.5 text-slate-500 text-sm leading-relaxed">
+                      <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${c.accent} bg-current`} />
                       {b}
                     </li>
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                {/* Tech stack */}
+                <div className="flex flex-wrap gap-2 pt-5 border-t border-slate-100">
                   {p.stack.map((tech) => (
-                    <span key={tech} className={`text-xs px-2.5 py-1 rounded-md font-medium ${c.tag}`}>
+                    <span key={tech} className={`text-xs px-3 py-1.5 rounded-full font-medium border ${c.tag}`}>
                       {tech}
                     </span>
                   ))}

@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="bg-gray-950 text-white antialiased">
+    <div className="bg-[#fafbff] text-[#1a1a2e] antialiased overflow-x-hidden">
       <Navbar />
       <Hero />
       <About />

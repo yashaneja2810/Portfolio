@@ -1,7 +1,7 @@
 import { Github, Linkedin, Mail, Phone, ArrowDown, Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const roles = ['Software Engineer', 'Full-Stack Developer', 'AI/ML Engineer', 'Backend Engineer'];
+const roles = ['Frontend Engineer', 'Full-Stack Developer', 'UI/UX Enthusiast', 'React Specialist'];
 
 export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
@@ -33,99 +33,99 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-gray-950 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg"
     >
-      {/* Grid background */}
+      {/* Decorative orbs */}
+      <div className="orb orb-indigo w-[500px] h-[500px] top-[10%] left-[15%]" />
+      <div className="orb orb-purple w-[400px] h-[400px] bottom-[10%] right-[10%]" />
+      <div className="orb orb-blue w-[300px] h-[300px] top-[50%] right-[30%]" />
+
+      {/* Grid pattern */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)',
+            'linear-gradient(rgba(99,102,241,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.5) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }}
       />
 
-      {/* Radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-cyan-500/5 blur-3xl pointer-events-none" />
-      <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] rounded-full bg-blue-500/5 blur-3xl pointer-events-none" />
+      {/* Dotted pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(99,102,241,0.8) 1px, transparent 1px)',
+          backgroundSize: '30px 30px',
+        }}
+      />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-medium mb-8 tracking-wide">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24">
+        {/* Status badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-indigo-200/50 text-indigo-600 text-xs font-semibold mb-10 tracking-wide shadow-lg shadow-indigo-500/5">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
           <Sparkles size={12} />
           Available for Opportunities
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-extrabold text-white tracking-tight mb-6 leading-none">
-          Yash<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Aneja</span>
+        {/* Name */}
+        <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 leading-[0.9]">
+          <span className="text-[#1a1a2e]">Yash</span>
+          <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 animate-gradient">
+            Aneja
+          </span>
         </h1>
 
-        <div className="text-xl md:text-2xl text-gray-400 mb-3 h-8 font-light">
-          <span className="text-white font-medium">{displayed}</span>
-          <span className="animate-pulse text-cyan-400">|</span>
+        {/* Typing role */}
+        <div className="text-xl md:text-2xl text-slate-400 mb-4 h-9 font-light">
+          <span className="text-slate-700 font-medium">{displayed}</span>
+          <span className="animate-pulse text-indigo-500 font-light">|</span>
         </div>
 
-        <p className="text-gray-500 max-w-2xl mx-auto mb-10 text-base md:text-lg leading-relaxed">
-          B.Tech Computer Science student at VIT Chennai. Versatile Software Engineer specializing in Full-Stack Development, AI/ML Systems, and Backend Engineering. Strong foundation in Data Structures & Algorithms with 150+ LeetCode problems solved.
+        {/* Description */}
+        <p className="text-slate-500 max-w-2xl mx-auto mb-12 text-base md:text-lg leading-relaxed">
+          Frontend Software Engineer delivering pixel-perfect, responsive web interfaces using
+          TypeScript, React, CSS3, and TailwindCSS. Strong background in design systems,
+          accessible UI components, and performance-optimized interfaces.
         </p>
 
+        {/* CTA Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
-          <a
-            href="#projects"
-            className="px-6 py-3 bg-cyan-500 text-gray-950 font-semibold rounded-lg hover:bg-cyan-400 transition-all duration-200 text-sm"
-          >
+          <a href="#projects" className="btn-primary flex items-center gap-2 text-sm">
             View My Work
+            <ArrowDown size={14} />
           </a>
-          <a
-            href="mailto:yashaneja28@gmail.com"
-            className="px-6 py-3 border border-white/20 text-white font-medium rounded-lg hover:bg-white/5 hover:border-white/40 transition-all duration-200 text-sm"
-          >
+          <a href="mailto:yashaneja28@gmail.com" className="btn-secondary text-sm">
             Contact Me
           </a>
         </div>
 
-        <div className="flex items-center justify-center gap-6">
-          <a
-            href="mailto:yashaneja28@gmail.com"
-            className="text-gray-500 hover:text-cyan-400 transition-colors duration-200"
-            title="Email"
-          >
-            <Mail size={20} />
-          </a>
-          <a
-            href="https://github.com/yashaneja2810"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-500 hover:text-cyan-400 transition-colors duration-200"
-            title="GitHub"
-          >
-            <Github size={20} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/yash-aneja-85b19128b"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-500 hover:text-cyan-400 transition-colors duration-200"
-            title="LinkedIn"
-          >
-            <Linkedin size={20} />
-          </a>
-          <a
-            href="tel:+919587800439"
-            className="text-gray-500 hover:text-cyan-400 transition-colors duration-200"
-            title="Phone"
-          >
-            <Phone size={20} />
-          </a>
+        {/* Social links */}
+        <div className="flex items-center justify-center gap-3 mb-16">
+          {[
+            { icon: Mail, href: 'mailto:yashaneja28@gmail.com', label: 'Email' },
+            { icon: Github, href: 'https://github.com/yashaneja2810', label: 'GitHub' },
+            { icon: Linkedin, href: 'https://www.linkedin.com/in/yash-aneja-85b19128b', label: 'LinkedIn' },
+            { icon: Phone, href: 'tel:+919587800439', label: 'Phone' },
+          ].map(({ icon: Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith('http') ? '_blank' : undefined}
+              rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-indigo-600 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/10 transition-all duration-300"
+              title={label}
+            >
+              <Icon size={17} />
+            </a>
+          ))}
         </div>
       </div>
 
-      <a
-        href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-600 hover:text-cyan-400 transition-colors animate-bounce"
-      >
-        <ArrowDown size={20} />
-      </a>
+
     </section>
   );
 }

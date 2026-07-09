@@ -1,65 +1,77 @@
-import { Briefcase, Calendar, TrendingUp } from 'lucide-react';
-
-const highlights = [
-  { metric: '~30%', desc: 'improvement in semantic search accuracy via RAG pipelines' },
-  { metric: '~25%', desc: 'reduction in query latency through optimized inference' },
-  { metric: 'Real-time', desc: 'AI integrations powered by LLM-backed FastAPI systems' },
-];
+import { Briefcase, Calendar, CheckCircle2 } from 'lucide-react';
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-gray-900">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="experience" className="relative py-28 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 to-transparent" />
+      <div className="orb orb-blue w-[350px] h-[350px] top-[20%] -left-[100px] opacity-25" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="mb-16">
-          <p className="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-3">Experience</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Work History</h2>
+          <p className="section-label">
+            <Briefcase size={14} />
+            Experience
+          </p>
+          <h2 className="section-title">Work History</h2>
         </div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/50 via-white/10 to-transparent" />
+          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-400/50 via-purple-300/30 to-transparent" />
 
           <div className="pl-8 md:pl-24 relative">
             {/* Timeline dot */}
-            <div className="absolute left-0 md:left-8 top-1 w-3 h-3 rounded-full bg-cyan-500 -translate-x-1/2 shadow-lg shadow-cyan-500/50" />
+            <div className="absolute left-0 md:left-8 top-2 -translate-x-1/2">
+              <div className="w-4 h-4 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 shadow-lg shadow-indigo-500/30" />
+              <div className="absolute inset-0 rounded-full bg-indigo-500 animate-ping opacity-20" />
+            </div>
 
-            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-cyan-500/20 transition-colors duration-300">
+            <div className="glass-card rounded-2xl p-8">
               <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                 <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <Briefcase size={16} className="text-cyan-400" />
-                    <span className="text-cyan-400 text-sm font-medium">Software Engineering & AI</span>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
+                      Full-Time Internship
+                    </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white">AI Research Intern</h3>
+                  <h3 className="text-xl font-bold text-[#1a1a2e]">
+                    AI Research Intern – Generative AI (Full-Stack)
+                  </h3>
                 </div>
-                <div className="flex items-center gap-2 text-gray-500 text-sm bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
+                <div className="flex items-center gap-2 text-slate-400 text-sm glass px-3 py-1.5 rounded-full">
                   <Calendar size={13} />
-                  May 2025
+                  May 2025 – July 2025
                 </div>
               </div>
 
               <ul className="space-y-3 mb-8">
                 {[
-                  'Architected and deployed scalable LLM-powered backend systems using FastAPI, enabling secure API-based AI integrations for real-time applications.',
-                  'Designed and implemented RAG-based data retrieval pipelines with vector databases, improving semantic search accuracy by ~30%.',
-                  'Optimized embedding generation and transformer inference pipelines, reducing query latency by ~25% for production workloads.',
-                  'Developed multi-agent workflows and prompt optimization strategies to handle complex multi-step reasoning and structured data queries.',
-                  'Applied strong DSA fundamentals to optimize algorithm performance and system efficiency across production environments.',
+                  'Designed and implemented responsive frontend interfaces using React, TypeScript, and TailwindCSS for AI-powered web applications — ensuring consistent visual output across devices and screen sizes.',
+                  'Built and maintained reusable UI component libraries following a defined component style guide — enforcing design consistency, accessibility standards, and predictable component behaviour.',
+                  'Collaborated asynchronously with a distributed engineering team, producing clear documentation on component APIs, UI behaviour, and design decisions.',
+                  'Identified and resolved visual inconsistencies between design references and implemented interfaces, proactively communicating discrepancies and proposing solutions.',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-cyan-500 shrink-0" />
+                  <li key={item} className="flex items-start gap-3 text-slate-500 text-sm leading-relaxed">
+                    <CheckCircle2 size={16} className="text-indigo-400 shrink-0 mt-0.5" />
                     {item}
                   </li>
                 ))}
               </ul>
 
-              <div className="grid sm:grid-cols-3 gap-3 pt-6 border-t border-white/10">
-                {highlights.map((h) => (
-                  <div key={h.desc} className="flex items-start gap-3">
-                    <TrendingUp size={16} className="text-cyan-400 shrink-0 mt-0.5" />
+              <div className="grid sm:grid-cols-3 gap-4 pt-6 border-t border-slate-100">
+                {[
+                  { label: 'React + TypeScript', desc: 'Frontend stack' },
+                  { label: 'Component Libraries', desc: 'Design system work' },
+                  { label: 'Remote-First', desc: 'Async collaboration' },
+                ].map((h) => (
+                  <div key={h.label} className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0">
+                      <div className="w-2 h-2 rounded-full bg-indigo-500" />
+                    </div>
                     <div>
-                      <div className="text-white font-semibold text-sm">{h.metric}</div>
-                      <div className="text-gray-500 text-xs leading-tight">{h.desc}</div>
+                      <div className="text-[#1a1a2e] font-semibold text-sm">{h.label}</div>
+                      <div className="text-slate-400 text-xs">{h.desc}</div>
                     </div>
                   </div>
                 ))}
